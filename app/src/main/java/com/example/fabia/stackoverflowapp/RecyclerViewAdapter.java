@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -15,11 +16,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView myTextView;
+        TextView myTextViewPuntaje;
+        TextView myTextViewAceptada;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            myTextView = (TextView) itemView.findViewById(android.R.id.text1);
+            myTextViewPuntaje = (TextView) itemView.findViewById(R.id.textPuntaje);
+            myTextViewAceptada = (TextView) itemView.findViewById(R.id.textAceptada);
         }
     }
 
@@ -32,14 +35,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public RecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View myView;
         myView = LayoutInflater.from(parent.getContext())
-                .inflate(android.R.layout.simple_selectable_list_item,parent,false);
+                .inflate(R.layout.row_recycler_layout, parent,false);
         return new ViewHolder(myView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapter.ViewHolder holder, int position) {
         Answers myAnswer = (Answers) mDatos.get(position);
-        holder.myTextView.setText(myAnswer.toString());
+
+        TextView myTextView1 = holder.myTextViewAceptada;
+        TextView myTextView2 = holder.myTextViewPuntaje;
+
+        myTextView1.setText(myAnswer.getIsAccepted());
+        myTextView2.setText(myAnswer.score);
         holder.itemView.setTag(myAnswer.answerId);
     }
 
