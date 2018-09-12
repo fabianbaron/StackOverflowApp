@@ -14,13 +14,12 @@
         <Spinner
             android:id="@+id/spinner_preguntas"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="30dp" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_lista"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
+            android:layout_height="400dp" >
         </android.support.v7.widget.RecyclerView>
 
         <Button
