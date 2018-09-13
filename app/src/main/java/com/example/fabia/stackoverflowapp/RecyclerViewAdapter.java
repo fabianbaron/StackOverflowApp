@@ -34,7 +34,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         myView = LayoutInflater.from(parent.getContext())
                 .inflate(android.R.layout.simple_selectable_list_item,parent,false);
         return new ViewHolder(myView);
-
     }
 
     @Override
