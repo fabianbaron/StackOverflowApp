@@ -149,7 +149,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(MainActivity.this,"Autenticando...",Toast.LENGTH_SHORT)
                         .show();
                 break;
-
         }
     }
 
