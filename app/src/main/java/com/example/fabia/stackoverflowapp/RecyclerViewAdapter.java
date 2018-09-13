@@ -14,6 +14,7 @@ import butterknife.ButterKnife;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
+
     private List<Answers> mDatos;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
