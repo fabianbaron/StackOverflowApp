@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rowLinearLayout"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+    <ImageView
+        android:id="@+id/imgViewProfilePic"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+    <LinearLayout
+        android:id="@+id/textLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textPuntaje"
+            android:layout_width="match_parent"
+            android:layout_height="50px"
+            android:text="Puntaje:" />
+
+        <TextView
+            android:id="@+id/textAceptada"
+            android:layout_width="match_parent"
+            android:layout_height="50px"
+            android:text="Aceptada:" />
+    </LinearLayout>
+
+</LinearLayout>

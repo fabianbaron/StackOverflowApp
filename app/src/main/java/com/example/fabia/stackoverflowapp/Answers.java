@@ -14,4 +14,8 @@ public class Answers {
     public String toString() {
         return answerId + "- Puntaje: " + score + "- Aceptada: " + (isAccepted?"Si":"No");
     }
+
+    public String getIsAccepted() {
+        return (isAccepted?"Si":"No");
+    }
 }
