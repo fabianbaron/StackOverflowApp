@@ -9,17 +9,21 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private List<Answers> mDatos;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
+        @BindView(android.R.id.text1)
         TextView myTextView;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            myTextView = (TextView) itemView.findViewById(android.R.id.text1);
+            ButterKnife.bind(this,itemView);
         }
     }
 

@@ -20,6 +20,8 @@ import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -30,10 +32,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private StackOverflowRetrofit myRetrofit;
     String token;
-    private Button botonAutenticar;
 
-    private Spinner selectorPreguntas;
-    private RecyclerView myRecyclerView;
+    @BindView(R.id.button_autenticar)
+    Button botonAutenticar;
+    @BindView(R.id.spinner_preguntas)
+    Spinner selectorPreguntas;
+    @BindView(R.id.recycler_lista)
+    RecyclerView myRecyclerView;
+
     private Callback<ListWrapper<Answers>> respuestaCallback = new Callback<ListWrapper<Answers>>() {
         @Override
         public void onResponse(Call<ListWrapper<Answers>> call,
@@ -81,8 +87,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
-        selectorPreguntas = (Spinner) findViewById(R.id.spinner_preguntas);
+
         selectorPreguntas.setOnItemSelectedListener(
                 new AdapterView.OnItemSelectedListener() {
                     @Override
@@ -100,8 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             );
 
-        botonAutenticar = (Button) findViewById(R.id.button_autenticar);
-        myRecyclerView = (RecyclerView) findViewById(R.id.recycler_lista);
+
         myRecyclerView.setHasFixedSize(true);
         myRecyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
 
